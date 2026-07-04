@@ -1,10 +1,12 @@
 # Clayton Young — a portfolio built for Kalshi
 
-The Product Designer posting said **“show us.”** So instead of attaching a PDF of screenshots, I designed and built a working portfolio in Kalshi's language — live market UI, cents pricing, and the design reasoning on every page.
+The Product Designer posting said **“show us.”** So instead of attaching a PDF of screenshots, I designed and built a working portfolio in Kalshi's language — live market UI, cents pricing, a playable trading demo, and the design reasoning on every page.
 
 ![Kalshi portfolio — landing](docs/demo.gif)
 
 **Live:** [kalshi-portfolio.pages.dev](https://kalshi-portfolio.pages.dev) · **Stack:** React · Next.js (App Router) · TypeScript · Framer Motion
+
+> **Please don't skim this one — play it.** Buy the 94¢ market about this application and fast-forward it to resolution, list your own contract on the board, open all seven pages. Everything is interactive, everything is built from scratch, and the site is the application.
 
 ---
 
