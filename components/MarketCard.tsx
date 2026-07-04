@@ -50,7 +50,7 @@ export function PriceTicker({ prob, dir, size = 40 }: { prob: number; dir: 1 | -
   );
 }
 
-export function YesNoButtons({ prob }: { prob: number }) {
+export function YesNoButtons({ prob, onOrder }: { prob: number; onOrder?: (side: "yes" | "no") => void }) {
   const yes = cents(prob);
   const no = 100 - yes;
   const base: React.CSSProperties = {
@@ -69,7 +69,9 @@ export function YesNoButtons({ prob }: { prob: number }) {
         whileHover={{ y: -2, boxShadow: "0 12px 26px -14px var(--green)" }}
         whileTap={{ scale: 0.97 }}
         transition={spring.snappy}
-        style={{ ...base, color: "var(--green-deep)", background: "var(--green-soft)", border: "1px solid var(--green-line)" }}
+        onClick={onOrder ? () => onOrder("yes") : undefined}
+        aria-label={`Buy Yes at ${yes} cents`}
+        style={{ ...base, color: "var(--green-deep)", background: "var(--green-soft)", border: "1px solid var(--green-line)", cursor: onOrder ? "pointer" : "default" }}
       >
         <span>Yes</span>
         <span className="tnum">{yes}¢</span>
@@ -78,7 +80,9 @@ export function YesNoButtons({ prob }: { prob: number }) {
         whileHover={{ y: -2, boxShadow: "0 12px 26px -14px var(--red)" }}
         whileTap={{ scale: 0.97 }}
         transition={spring.snappy}
-        style={{ ...base, color: "var(--red)", background: "var(--red-soft)", border: "1px solid rgba(229,72,77,0.32)" }}
+        onClick={onOrder ? () => onOrder("no") : undefined}
+        aria-label={`Buy No at ${no} cents`}
+        style={{ ...base, color: "var(--red)", background: "var(--red-soft)", border: "1px solid rgba(229,72,77,0.32)", cursor: onOrder ? "pointer" : "default" }}
       >
         <span>No</span>
         <span className="tnum">{no}¢</span>
@@ -87,7 +91,17 @@ export function YesNoButtons({ prob }: { prob: number }) {
   );
 }
 
-export function MarketCard({ market, featured = false }: { market: Market; featured?: boolean }) {
+export function MarketCard({
+  market,
+  featured = false,
+  onOrder,
+  badge,
+}: {
+  market: Market;
+  featured?: boolean;
+  onOrder?: (side: "yes" | "no") => void;
+  badge?: string;
+}) {
   const lineColor = market.dir === -1 ? "var(--red)" : "var(--green)";
   return (
     <motion.article
@@ -106,20 +120,39 @@ export function MarketCard({ market, featured = false }: { market: Market; featu
       }}
     >
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
-        <span
-          style={{
-            fontSize: 11,
-            fontWeight: 700,
-            letterSpacing: "0.05em",
-            textTransform: "uppercase",
-            color: "var(--muted)",
-            background: "var(--surface-2)",
-            border: "1px solid var(--border)",
-            padding: "3px 9px",
-            borderRadius: "var(--r-pill)",
-          }}
-        >
-          {market.category}
+        <span style={{ display: "inline-flex", gap: 6, alignItems: "center" }}>
+          <span
+            style={{
+              fontSize: 11,
+              fontWeight: 700,
+              letterSpacing: "0.05em",
+              textTransform: "uppercase",
+              color: "var(--muted)",
+              background: "var(--surface-2)",
+              border: "1px solid var(--border)",
+              padding: "3px 9px",
+              borderRadius: "var(--r-pill)",
+            }}
+          >
+            {market.category}
+          </span>
+          {badge && (
+            <span
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                color: "var(--green-deep)",
+                background: "var(--green-soft)",
+                border: "1px solid var(--green-line)",
+                padding: "3px 9px",
+                borderRadius: "var(--r-pill)",
+              }}
+            >
+              {badge}
+            </span>
+          )}
         </span>
         <span className="tnum" style={{ fontSize: 12, color: "var(--faint)", fontWeight: 600 }}>
           {usd(market.volume)} vol
@@ -135,7 +168,7 @@ export function MarketCard({ market, featured = false }: { market: Market; featu
         </div>
       </div>
 
-      <YesNoButtons prob={market.prob} />
+      <YesNoButtons prob={market.prob} onOrder={onOrder} />
     </motion.article>
   );
 }

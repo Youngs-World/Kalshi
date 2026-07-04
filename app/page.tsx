@@ -9,29 +9,43 @@ import { container, item, spring } from "@/lib/ui";
 
 const SECTIONS = [
   {
-    href: "/work",
+    href: "/trade",
     n: "01",
+    title: "Trade",
+    blurb: "A playable demo of the whole loop — $100, an order ticket, live P&L, resolution. One market is about this application.",
+    tag: "Play this first",
+  },
+  {
+    href: "/work",
+    n: "02",
     title: "Work",
     blurb: "Three shipped products with real users — plus the prediction-market study I built before I ever saw this posting.",
     tag: "Portfolio",
   },
   {
     href: "/craft",
-    n: "02",
+    n: "03",
     title: "Craft",
     blurb: "The details I obsess over, live and pokeable — price motion, tabular numerals, spring physics, states.",
     tag: "Interaction lab",
   },
   {
+    href: "/range",
+    n: "04",
+    title: "Range",
+    blurb: "One live market designed five deliberately different ways — with the tradeoffs stated out loud.",
+    tag: "Design judgment",
+  },
+  {
     href: "/markets",
-    n: "03",
+    n: "05",
     title: "Markets",
-    blurb: "Why prediction markets have my full attention — and how I think about designing for traders.",
+    blurb: "Why prediction markets have my full attention — plus a flow where you design and list your own.",
     tag: "The passion part",
   },
   {
     href: "/resume",
-    n: "04",
+    n: "06",
     title: "Résumé",
     blurb: "The paper version — one page, plus the PDF for your ATS.",
     tag: "The formal part",
@@ -63,24 +77,24 @@ export default function Home() {
               page is a work sample.
             </motion.p>
             <motion.div variants={item} style={{ display: "flex", gap: 12, marginTop: 28, flexWrap: "wrap" }}>
-              <Link href="/work">
+              <Link href="/trade">
                 <motion.span
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.97 }}
                   transition={spring.snappy}
                   style={{ display: "inline-block", background: "var(--green-deep)", color: "#fff", fontSize: 15, fontWeight: 700, padding: "13px 22px", borderRadius: "var(--r-pill)", boxShadow: "var(--shadow-soft)" }}
                 >
-                  See the work →
+                  Try the trading demo →
                 </motion.span>
               </Link>
-              <Link href="/markets">
+              <Link href="/work">
                 <motion.span
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.97 }}
                   transition={spring.snappy}
                   style={{ display: "inline-block", background: "var(--surface)", border: "1px solid var(--border-strong)", fontSize: 15, fontWeight: 700, padding: "13px 22px", borderRadius: "var(--r-pill)" }}
                 >
-                  Why markets?
+                  See the work
                 </motion.span>
               </Link>
             </motion.div>

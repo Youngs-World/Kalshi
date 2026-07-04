@@ -16,7 +16,9 @@ export function Mark({ size = 26 }: { size?: number }) {
 
 const NAV = [
   { href: "/work", label: "Work" },
+  { href: "/trade", label: "Trade" },
   { href: "/craft", label: "Craft" },
+  { href: "/range", label: "Range" },
   { href: "/markets", label: "Markets" },
   { href: "/resume", label: "Résumé" },
 ];
@@ -30,7 +32,7 @@ export function TopBar() {
           <Mark />
           <span style={{ fontSize: 15.5, fontWeight: 700, letterSpacing: "-0.02em" }}>Clayton Young</span>
         </Link>
-        <nav style={{ display: "flex", gap: 2 }}>
+        <nav className="topnav" style={{ display: "flex", gap: 2, overflowX: "auto" }}>
           {NAV.map((n) => (
             <Link key={n.href} href={n.href} className={`navlink${path === n.href ? " active" : ""}`}>
               {n.label}

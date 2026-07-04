@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { TopBar, Footer } from "@/components/Nav";
 import { Reveal } from "@/components/Reveal";
 import { MarketCard } from "@/components/MarketCard";
+import { DesignMarket } from "@/components/DesignMarket";
 import { useLiveMarkets } from "@/lib/useLiveMarkets";
+import type { Market } from "@/lib/markets";
 import { spring, LINKS } from "@/lib/ui";
 
 const PRINCIPLES = [
@@ -24,6 +27,7 @@ const PRINCIPLES = [
 
 export default function Markets() {
   const markets = useLiveMarkets();
+  const [custom, setCustom] = useState<Market[]>([]);
 
   return (
     <main>
@@ -56,6 +60,9 @@ export default function Markets() {
         {/* live board */}
         <Reveal style={{ marginTop: 40 }}>
           <div className="board">
+            {custom.map((m) => (
+              <MarketCard key={m.id} market={m} badge="Just listed" />
+            ))}
             {markets.map((m) => (
               <MarketCard key={m.id} market={m} />
             ))}
@@ -64,6 +71,22 @@ export default function Markets() {
             Simulated prices — the interaction design is the exhibit.
           </div>
         </Reveal>
+
+        {/* design your own */}
+        <div style={{ marginTop: 60 }}>
+          <Reveal>
+            <div className="eyebrow" style={{ marginBottom: 10 }}>Design a market</div>
+            <h2 style={{ fontSize: "clamp(26px, 3.6vw, 34px)", marginBottom: 10 }}>Now you list one.</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--muted)", maxWidth: 620, marginBottom: 26 }}>
+              Market design is product design: a good contract is unambiguous, settle-able, and priced where honest
+              money would open. Write one — the form teaches the rules as you go, and publishing puts it on the board
+              above.
+            </p>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <DesignMarket onPublish={(m) => setCustom((cs) => [m, ...cs])} />
+          </Reveal>
+        </div>
 
         {/* principles */}
         <div style={{ marginTop: 56 }}>

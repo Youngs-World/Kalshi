@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { SEED_MARKETS, tick, type Market } from "./markets";
 
 /** Round-robin live ticks after mount, so updates feel organic. */
-export function useLiveMarkets(intervalMs = 2000) {
-  const [markets, setMarkets] = useState<Market[]>(SEED_MARKETS);
+export function useLiveMarkets(intervalMs = 2000, seed: Market[] = SEED_MARKETS) {
+  const [markets, setMarkets] = useState<Market[]>(seed);
 
   useEffect(() => {
     let cursor = 0;

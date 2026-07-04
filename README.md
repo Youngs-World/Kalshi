@@ -12,10 +12,12 @@ The Product Designer posting said **“show us.”** So instead of attaching a P
 
 | | Page | What it shows |
 |---|---|---|
-| 01 | [Work](https://kalshi-portfolio.pages.dev/work) | Shipped products with real users — problem → design decisions → outcome, for each. |
-| 02 | [Craft](https://kalshi-portfolio.pages.dev/craft) | An interaction lab: spring-tuned price motion, tabular numerals, Yes/No spread, order buttons — live, with the *why* under each. |
-| 03 | [Markets](https://kalshi-portfolio.pages.dev/markets) | Why prediction markets have my full attention, plus a live Kalshi-style board (event contracts, Yes + No = 100¢). |
-| 04 | [Résumé](https://kalshi-portfolio.pages.dev/resume) | Their requirements mapped line-by-line to proof, plus the one-page PDF. |
+| 01 | [Trade](https://kalshi-portfolio.pages.dev/trade) | **A playable demo of the whole loop** — $100 paper balance, order ticket with live cents math, positions with breathing P&L, close or fast-forward to resolution. One market is about this application; it trades at 94¢. |
+| 02 | [Work](https://kalshi-portfolio.pages.dev/work) | Shipped products with real users — problem → design decisions → outcome, for each. |
+| 03 | [Craft](https://kalshi-portfolio.pages.dev/craft) | An interaction lab: spring-tuned price motion, tabular numerals, Yes/No spread, order buttons — live, with the *why* under each. |
+| 04 | [Range](https://kalshi-portfolio.pages.dev/range) | The same live market designed five deliberately different ways — consumer, pro terminal, widget, dark, accessibility-first — with the tradeoffs stated out loud. |
+| 05 | [Markets](https://kalshi-portfolio.pages.dev/markets) | Why prediction markets have my full attention, a live cents-priced board — and a **“design a market” flow** where you write and list your own contract. |
+| 06 | [Résumé](https://kalshi-portfolio.pages.dev/resume) | Their requirements mapped line-by-line to proof, plus the one-page PDF. |
 
 ## Details I sweat
 
