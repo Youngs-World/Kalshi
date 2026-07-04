@@ -34,7 +34,7 @@ export default function Resume() {
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.97 }}
               transition={spring.snappy}
-              style={{ display: "inline-block", background: "var(--green)", color: "#fff", fontSize: 14.5, fontWeight: 700, padding: "12px 20px", borderRadius: "var(--r-pill)", boxShadow: "var(--shadow-soft)" }}
+              style={{ display: "inline-block", background: "var(--green-deep)", color: "#fff", fontSize: 14.5, fontWeight: 700, padding: "12px 20px", borderRadius: "var(--r-pill)", boxShadow: "var(--shadow-soft)" }}
             >
               Download PDF ↓
             </motion.a>

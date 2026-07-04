@@ -24,7 +24,7 @@ const NAV = [
 export function TopBar() {
   const path = usePathname();
   return (
-    <div style={{ borderBottom: "1px solid var(--border)", background: "rgba(251,251,249,0.88)", backdropFilter: "blur(8px)", position: "sticky", top: 0, zIndex: 20 }}>
+    <div style={{ borderBottom: "1px solid var(--border)", background: "rgba(247,251,249,0.88)", backdropFilter: "blur(8px)", position: "sticky", top: 0, zIndex: 20 }}>
       <div className="wrap" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: 60 }}>
         <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: 10 }} aria-label="Home">
           <Mark />

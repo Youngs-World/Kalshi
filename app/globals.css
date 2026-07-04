@@ -6,21 +6,21 @@
    ============================================================ */
 
 :root {
-  --bg: #fbfbf9;
+  --bg: #f7fbf9;
   --surface: #ffffff;
-  --surface-2: #f4f6f3;
-  --surface-3: #ecefe9;
-  --border: #e5e8e2;
-  --border-strong: #d2d8cf;
+  --surface-2: #eef6f1;
+  --surface-3: #e3efe8;
+  --border: #e0ebe4;
+  --border-strong: #cbdfd4;
 
-  --ink: #0e1512;
-  --muted: #5b6660;
-  --faint: #8b958e;
+  --ink: #0d1512;
+  --muted: #5a6660;
+  --faint: #8a958e;
 
-  --green: #00a05f;          /* Kalshi green / YES */
-  --green-deep: #00784a;
-  --green-soft: rgba(0, 160, 95, 0.10);
-  --green-line: rgba(0, 160, 95, 0.32);
+  --green: #09c285;          /* Kalshi green — sampled from kalshi's own board */
+  --green-deep: #069d6b;
+  --green-soft: rgba(9, 194, 133, 0.11);
+  --green-line: rgba(9, 194, 133, 0.38);
   --red: #e5484d;            /* NO */
   --red-soft: rgba(229, 72, 77, 0.09);
 

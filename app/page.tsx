@@ -12,7 +12,7 @@ const SECTIONS = [
     href: "/work",
     n: "01",
     title: "Work",
-    blurb: "Shipped products with real users — including a prediction-market interface I built before I ever saw this posting.",
+    blurb: "Three shipped products with real users — plus the prediction-market study I built before I ever saw this posting.",
     tag: "Portfolio",
   },
   {
@@ -68,7 +68,7 @@ export default function Home() {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.97 }}
                   transition={spring.snappy}
-                  style={{ display: "inline-block", background: "var(--green)", color: "#fff", fontSize: 15, fontWeight: 700, padding: "13px 22px", borderRadius: "var(--r-pill)", boxShadow: "var(--shadow-soft)" }}
+                  style={{ display: "inline-block", background: "var(--green-deep)", color: "#fff", fontSize: 15, fontWeight: 700, padding: "13px 22px", borderRadius: "var(--r-pill)", boxShadow: "var(--shadow-soft)" }}
                 >
                   See the work →
                 </motion.span>

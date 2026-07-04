@@ -20,7 +20,7 @@ const STUDIES: Study[] = [
   {
     n: "01",
     title: "Market Pulse",
-    sub: "A prediction-market interface study · Next.js · Framer Motion",
+    sub: "A prediction-market interface study — live build, simulated data · Next.js · Framer Motion",
     href: LINKS.marketpulse,
     cta: "Live demo ↗",
     problem:
@@ -32,7 +32,7 @@ const STUDIES: Study[] = [
       "Green/red carry direction only — never decoration — so color stays trustworthy.",
     ],
     outcome:
-      "Built before I ever saw this posting — the prediction-market obsession predates the application. It became my most-clicked portfolio piece.",
+      "Honest label: a working study, not a shipped product — real interface, simulated prices. Built on my own nights before I ever saw this posting.",
   },
   {
     n: "02",
@@ -91,8 +91,9 @@ export default function Work() {
           <div className="eyebrow" style={{ marginBottom: 14 }}>01 · Work</div>
           <h1 style={{ fontSize: "clamp(34px, 5vw, 50px)" }}>Shipped, not mocked.</h1>
           <p style={{ fontSize: 17.5, lineHeight: 1.65, color: "var(--muted)", marginTop: 18 }}>
-            Everything below is a real product a stranger can use today. For each: the problem, the design decisions,
-            and what shipped. I&apos;m the designer <i>and</i> the person who built it — so nothing here died in handoff.
+            Everything below is live — you can use each one right now. Three are shipped products with real users; one
+            is a working study, and it&apos;s labeled as one. For each: the problem, the design decisions, and the
+            outcome. I&apos;m the designer <i>and</i> the person who built it — so nothing here died in handoff.
           </p>
         </motion.div>
 
